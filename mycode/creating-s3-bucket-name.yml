@@ -1,0 +1,8 @@
+Resources:
+ mys3bucket:
+   Type: AWS::S3::Bucket
+   Properties: 
+     AccessControl: PublicReadWrite
+     BucketName: ashokcftemplatestest12349876
+
+  
