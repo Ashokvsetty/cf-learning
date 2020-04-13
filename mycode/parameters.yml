@@ -1,0 +1,21 @@
+Parameters: 
+  InstanceTypeParameter: 
+    Type: String
+    Default: t2.micro
+    AllowedValues: 
+      - t2.micro
+      - m1.small
+      - m1.large
+    Description: Enter t2.micro, m1.small, or m1.large. Default is t2.micro.
+  SSHKeyPairParameter:
+    Type: AWS::EC2::KeyPair::KeyName
+    Description: Enter the SSH KeyPair
+Resources:
+  Ec2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType:
+        Ref: InstanceTypeParameter
+      ImageId: ami-0470e33cd681b2476
+      KeyName:
+        Ref: SSHKeyPairParameter
